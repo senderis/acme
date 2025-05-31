@@ -105,6 +105,3 @@ If you need to run something that is not in the Makefile, use `make mount/php`. 
 As mentioned above, automated code quality checks are used in the pre-commit hook.
 
 I always check out a task-specific branch from `master`, and sometimes even more branches if the task is difficult. This guarantees I will always have a stable, verified restore point. I like to commit frequently to these branches. When I need to merge to the main branch, I use the `--squash` parameter to eliminate many commits on the main branch and merge them into a single commit. This improves the readability of the main branch.
-
-
-## 
