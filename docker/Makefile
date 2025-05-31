@@ -104,6 +104,13 @@ test/api:
 	$(call codecept_api)
 .PHONY: test/api
 
+phpstan:
+	$(call phpstan)
+.PHONY: phpstan
+
+php-cs-fixer:
+	$(call php-cs-fixer)
+.PHONY: php-cs-fixer
 
 phpunit:
 	$(call phpunit)	

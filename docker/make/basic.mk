@@ -28,7 +28,7 @@ endef
 
 define phpstan
 	$(call setup_env,$(ENV_FILE))
-	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpstan analyse src --level=5"
+	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpstan analyse src"
 endef
 
 define phpunit
