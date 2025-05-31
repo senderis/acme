@@ -28,12 +28,22 @@ endef
 
 define phpstan
 	$(call setup_env,$(ENV_FILE))
-	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpstan analyse src --level=5"
+	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpstan analyse src"
 endef
 
 define phpunit
 	$(call setup_env,$(ENV_FILE))
 	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpunit $(RUN_ARGS)"
+endef
+
+define phpunit_help
+	$(call setup_env,$(ENV_FILE))
+	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpunit --help"
+endef
+
+define phpunit_filter
+	$(call setup_env,$(ENV_FILE))
+	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpunit --filter $(RUN_ARGS)"
 endef
 
 define php-cs-fixer

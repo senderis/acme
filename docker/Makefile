@@ -104,10 +104,25 @@ test/api:
 	$(call codecept_api)
 .PHONY: test/api
 
+phpstan:
+	$(call phpstan)
+.PHONY: phpstan
+
+php-cs-fixer:
+	$(call php-cs-fixer)
+.PHONY: php-cs-fixer
 
 phpunit:
 	$(call phpunit)	
 .PHONY: phpunit
+
+phpunit/help:
+	$(call phpunit_help)	
+.PHONY: phpunit_help
+
+phpunit/filter:
+	$(call phpunit_filter)	
+.PHONY: phpunit_filter
 
 
 ### ADVANCED COMMANDS ###
