@@ -1,0 +1,14 @@
+services:
+  php:
+    container_name: php
+    image: ${PROJECT_NAME}-php-${VERSION}:latest
+    build: .
+    volumes:
+      - ${PROJECT_PATH}/app:/var/www/html:consistent
+      - ${PROJECT_PATH}/app:/var/xdebug:/tmp/xdebug
+    networks:
+      - host_network
+    #tty need for error log to standard error
+    tty: true
+    #command: /bin/bash
+    

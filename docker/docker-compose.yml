@@ -1,0 +1,7 @@
+
+#include common services here
+include:
+  - ./php/8.3/php-compose.yml
+networks:
+  host_network:
+    driver: bridge
