@@ -76,3 +76,11 @@ make phpstan
 
 
 If you need to run something that is not in the Makefile, use `make mount/php`. You will be placed in the application folder inside the container and can execute commands such as `vendor/bin/phpunit`.
+
+## Coding style 
+
+- Do not use PHPDoc style comments; I prefer to use meaningful names. In some places, you may find PHPDoc style comments—
+the reason is to pass the highest level with PHPStan, you have to use these comments like this:
+   /**
+    * @var array<Product> $products
+    **/

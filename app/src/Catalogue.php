@@ -6,6 +6,9 @@ namespace Acme;
 
 final class Catalogue
 {
+    /**
+     * @var array<Product> $products
+     **/
     private array $products = [];
     /**
      * @param array<Product> $products
