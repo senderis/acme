@@ -62,7 +62,7 @@ There was 1 PHPUnit test runner warning:
 
 1) Class BaseTest declared in /var/www/html/tests/BaseTest.php is abstract
 
-
+I prefer to avoid mocking; use whenever possible real units, not mocked ones.
 
 ## Code quality tools
 
