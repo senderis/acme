@@ -26,7 +26,7 @@ Acme Widget Co - Interview Test
 # Launch setup
 make setup
 
-## Docker makefile commands
+## Docker Makefile commands
 
 - `make build`         – Build containers
 - `make build all`     – Build all containers
@@ -40,7 +40,6 @@ make setup
 - `make setup`         – Install the application
 - `make uninstall`     – Uninstall the application
 - `make up`            – Start Docker containers
-
 
 ## Testing
 
@@ -74,13 +73,19 @@ make php-cs-fixer
 make phpstan
 ```
 
-
 If you need to run something that is not in the Makefile, use `make mount/php`. You will be placed in the application folder inside the container and can execute commands such as `vendor/bin/phpunit`.
 
-## Coding style 
+## Coding style
 
 - Do not use PHPDoc style comments; I prefer to use meaningful names. In some places, you may find PHPDoc style comments—
 the reason is to pass the highest level with PHPStan, you have to use these comments like this:
    /**
     * @var array<Product> $products
     **/
+- I use `final` classes and read-only properties whenever possible. If you need to extend a class in the future, it is easy to remove the `final` keyword, and all extension happens in a controlled manner within the team. Read-only properties are also helpful to avoid bugs and unexpected state changes.
+
+## GitHub or GitLab handling
+
+As mentioned above, automated code quality checks are used in the pre-commit hook.
+
+I always check out a task-specific branch from `master`, and sometimes even more branches if the task is difficult. This guarantees I will always have a stable, verified restore point. I like to commit frequently to these branches. When I need to merge to the main branch, I use the `--squash` parameter to eliminate many commits on the main branch and merge them into a single commit. This improves the readability of the main branch.
