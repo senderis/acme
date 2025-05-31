@@ -1,6 +1,9 @@
 Acme Widget Co - Interview Test
 ===============================
 
+Everything works on the `main` branch, and it is merged with the `develop` branch using `--squash`.  
+If you are curious about individual commits, please look at the `develop` branch.
+
 ````markdown
 ### Configure Docker
 
@@ -97,6 +100,3 @@ If you need to run something that is not in the Makefile, use `make mount/php`. 
 As mentioned above, automated code quality checks are used in the pre-commit hook.
 
 I always check out a task-specific branch from `master`, and sometimes even more branches if the task is difficult. This guarantees I will always have a stable, verified restore point. I like to commit frequently to these branches. When I need to merge to the main branch, I use the `--squash` parameter to eliminate many commits on the main branch and merge them into a single commit. This improves the readability of the main branch.
-
-
-## 
