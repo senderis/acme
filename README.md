@@ -3,6 +3,7 @@ Acme Widget Co - Interview Test
 
 Everything works on the `main` branch, and it is merged with the `develop` branch using `--squash`.  
 If you are curious about individual commits, please look at the `develop` branch.
+Project tested on Linux and Mac using a multi-platform image.
 
 ````markdown
 ### Configure Docker
@@ -43,6 +44,10 @@ make setup
 - `make setup`         – Install the application
 - `make uninstall`     – Uninstall the application
 - `make up`            – Start Docker containers
+
+This Docker configuration is a simplified version of my everyday setup.  
+I have left Make commands for Laravel, Symfony, etc., to save time.  
+Other items—such as HTTPS certificate generation, Traefik load balancer, unused volumes, and containers like Nginx, Redis, and profiles—have been removed.
 
 ## Testing
 
