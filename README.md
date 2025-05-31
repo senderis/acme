@@ -57,6 +57,13 @@ Run with filter:
 make phpunit/filter CatalogueTest
 ```
 
+This is a normal intended warning by PHPUNIT developers safe to ignore it.
+There was 1 PHPUnit test runner warning:
+
+1) Class BaseTest declared in /var/www/html/tests/BaseTest.php is abstract
+
+
+
 ## Code quality tools
 
 The project uses the following tools to ensure code quality:
@@ -77,15 +84,19 @@ If you need to run something that is not in the Makefile, use `make mount/php`. 
 
 ## Coding style
 
-- Do not use PHPDoc style comments; I prefer to use meaningful names. In some places, you may find PHPDoc style comments—
-the reason is to pass the highest level with PHPStan, you have to use these comments like this:
+- I generally avoid using PHPDoc-style comments at all blocks, as they tend to reduce code readability; instead, I prefer meaningful names. However, in some cases, you may find PHPDoc comments—this is necessary to satisfy the highest PHPStan level, for example:
    /**
     * @var array<Product> $products
     **/
-- I use `final` classes and read-only properties whenever possible. If you need to extend a class in the future, it is easy to remove the `final` keyword, and all extension happens in a controlled manner within the team. Read-only properties are also helpful to avoid bugs and unexpected state changes.
+- I use `final` classes and read-only properties whenever possible. If a class needs to be extended in the future, it is easy to remove the `final` keyword, ensuring that all extensions are managed in a controlled way within the team. Read-only properties help prevent bugs and unexpected state changes.
+- I used `declare(strict_types=1);` at the top of each PHP file to enforce strict type checking by the PHP runtime.
+- I prefer test-driven development whenever possible. However, some companies do not support it, believing that a dedicated QA team is sufficient and that developers should not spend time writing their own tests. In such cases, I write tests only for the more complex parts of the code when necessary to ensure correct results.
 
 ## GitHub or GitLab handling
 
 As mentioned above, automated code quality checks are used in the pre-commit hook.
 
 I always check out a task-specific branch from `master`, and sometimes even more branches if the task is difficult. This guarantees I will always have a stable, verified restore point. I like to commit frequently to these branches. When I need to merge to the main branch, I use the `--squash` parameter to eliminate many commits on the main branch and merge them into a single commit. This improves the readability of the main branch.
+
+
+## 
