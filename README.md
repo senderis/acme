@@ -52,6 +52,12 @@ Run all tests with:
 make test
 ```
 
+Run with filter:
+
+```
+make phpunit/filter CatalogueTest
+```
+
 ## Code quality tools
 
 The project uses the following tools to ensure code quality:

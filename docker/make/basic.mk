@@ -36,6 +36,16 @@ define phpunit
 	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpunit $(RUN_ARGS)"
 endef
 
+define phpunit_help
+	$(call setup_env,$(ENV_FILE))
+	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpunit --help"
+endef
+
+define phpunit_filter
+	$(call setup_env,$(ENV_FILE))
+	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/phpunit --filter $(RUN_ARGS)"
+endef
+
 define php-cs-fixer
 	$(call setup_env,$(ENV_FILE))
 	docker exec -it $(CNT) $(LINUX_CMD_SHELL) "vendor/bin/php-cs-fixer fix src --rules=@PSR12"
