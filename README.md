@@ -1,7 +1,7 @@
 Acme Widget Co - Interview Test
 ===============================
 
-Everything works on the `main` branch, and it is merged into the `develop` branch using `--squash`.  
+Everything works on the `main` branch, and it is merged with the `develop` branch using `--squash`.  
 If you are curious about individual commits, please look at the `develop` branch.
 
 ````markdown
